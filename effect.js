@@ -3,6 +3,42 @@ $(window).load(function(){
 	$('.container').fadeIn('fast');
 });
 $('document').ready(function(){
+	var system ={};
+	var p = navigator;
+	var wid = 0, hei = 0, size = 1;
+	// system.win = p.platform.indexOf("Win") == 0;
+	// system.mac = p.platform.indexOf("Mac") == 0;
+	// system.x11 = (p.platform == "X11") || (p.platform.indexOf("Linux") == 0);
+	system.Android = p.appVersion.indexOf("Android") > 0;
+	system.iPhone = p.appVersion.indexOf("iPhone") > 0;
+	system.iPad = p.appVersion.indexOf("iPad") > 0;
+	if(system.Android||system.iPhone) {
+		$('#cen1').addClass('dis-none');
+		// $('.balloons').css('background-size', '40px 73.5px');
+		// $('.balloons').css('width', '40px');
+		// $('.balloons').css('height', '73.5px');
+		// $('.balloons h2').css('font-size', '20px');
+		size = 0.4;
+		// wid = $(window).width()*0.8;
+		// hei = $(window).height()*0.6;
+	}else if(system.iPad) {
+		$('#cen2').addClass('dis-none');
+		// $('.balloons').css('background-size', '90px 164.7px');
+		// $('.balloons').css('width', '90px');
+		// $('.balloons').css('height', '164.7px');
+		// $('.balloons h2').css('font-size', '45px');
+		size = 0.9;
+		// wid = 600;
+		// hei = 800;
+	}else {
+		$('#cen2').addClass('dis-none');
+		// wid = 1000;
+		// hei = 500;
+	}
+	wid = $(window).width()*0.8;
+	hei = $(window).height()*0.7;
+
+	
 		var vw;
 		$(window).resize(function(){
 			 vw = $(window).width()/2;

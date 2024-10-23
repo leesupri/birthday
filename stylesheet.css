@@ -1056,7 +1056,7 @@ audio {
 	100% {
 		-ms-transform:translate(0px,0px);
 	}
-}o
+}
 @keyframes bannar_come {
 	0%{
 		transform:translate(0px,-1000px);
@@ -1302,9 +1302,50 @@ audio {
 
 
 
-    /*controlling tablet width*/
-    /*@media only screen and (max-width: 720px){
-    	.container {
-    		-webkit-transform: scale(0.9);
-    	}
-    }*/
+     /*controlling tablet width*/
+	 @media screen and (max-width: 768px) and (min-width: 450px) {
+
+		.balloons {
+			position: fixed;
+			bottom: -200px;
+			opacity: 0.6;
+			z-index: 99;
+			width: 90px;
+			height: 164.7px;
+			background-repeat: no-repeat no-repeat;
+			background-size: 90px 164.7px;
+		}
+		.balloons h2 {
+			text-transform: uppercase;
+			font-family: 'Signika', sans-serif;
+			font-size: 45px;
+			color: #BF4136;
+			text-shadow: 5px 5px 5px #FFF;
+			display: none;
+			margin-top: 25px;
+		}
+    }
+
+    @media screen and (max-width: 450px) {
+    	
+		.balloons {
+			position: fixed;
+			bottom: -200px;
+			opacity: 0.6;
+			z-index: 99;
+			width: 40px;
+			height: 73.5px;
+			background-repeat: no-repeat no-repeat;
+			background-size: 40px 73.5px;
+		}
+		.balloons h2 {
+			text-transform: uppercase;
+			font-family: 'Signika', sans-serif;
+			font-size: 20px;
+			color: #BF4136;
+			text-shadow: 5px 5px 5px #FFF;
+			display: none;
+			margin-top: 10px;
+		}
+		
+    }
